@@ -6,7 +6,7 @@
 
 import azure.cognitiveservices.speech as speechsdk
 
-speech_config = speechsdk.SpeechConfig(subscription="fd05021744a143a0ba34e768c97f15cd", region="westeurope")
+speech_config = speechsdk.SpeechConfig(subscription="<YOUR_SPEECH_SERVICE_KEY>", region="westeurope")
 
 import logging
 import os
@@ -19,17 +19,17 @@ logging.basicConfig(stream=sys.stdout, level=logging.DEBUG,
         format="%(asctime)s %(message)s", datefmt="%m/%d/%Y %I:%M:%S %p %Z")
 
 # Your subscription key and region for the speech service
-SUBSCRIPTION_KEY = "fd05021744a143a0ba34e768c97f15cd"
+SUBSCRIPTION_KEY = "<YOUR_SPEECH_SERVICE_KEY>"
 SERVICE_REGION = "westeurope"
 
 NAME = "Simple transcription"
 DESCRIPTION = "Simple transcription description"
 
 LOCALE = "tr-TR"
-RECORDINGS_BLOB_URI = "https://demosdx.blob.core.windows.net/demo?sp=racwdli&st=2022-03-31T07:25:40Z&se=2022-04-07T15:25:40Z&spr=https&sv=2020-08-04&sr=c&sig=qqZZw%2Fyqs83XNSbUJKQ54AqR%2FSiG3ZZ6XlXT1qqILPM%3D"
+RECORDINGS_BLOB_URI = "https://<YOUR_BLOB_STORAGE_ACCOUNT>.blob.core.windows.net/demo?sp=racwdli&st=2022-03-31T07:25:40Z&se=2022-04-07T15:25:40Z&spr=https&sv=2020-08-04&sr=c&sig=qqZZw%2Fyqs83XNSbUJKQ54AqR%2FSiG3ZZ6XlXT1qqILPM%3D"
 
 # Provide the uri of a container with audio files for transcribing all of them with a single request
-RECORDINGS_CONTAINER_URI = "https://demosdx.blob.core.windows.net/demo?sp=racwdli&st=2022-03-31T07:25:40Z&se=2022-04-07T15:25:40Z&spr=https&sv=2020-08-04&sr=c&sig=qqZZw%2Fyqs83XNSbUJKQ54AqR%2FSiG3ZZ6XlXT1qqILPM%3D"
+RECORDINGS_CONTAINER_URI = "https://<YOUR_BLOB_STORAGE_ACCOUNT>.blob.core.windows.net/demo?sp=racwdli&st=2022-03-31T07:25:40Z&se=2022-04-07T15:25:40Z&spr=https&sv=2020-08-04&sr=c&sig=qqZZw%2Fyqs83XNSbUJKQ54AqR%2FSiG3ZZ6XlXT1qqILPM%3D"
 # Set model information when doing transcription with custom models
 MODEL_REFERENCE = None  # guid of a custom model
 
@@ -154,7 +154,7 @@ def transcribe():
         # "profanityFilterMode": "Masked",
         # "wordLevelTimestampsEnabled": False,
          "diarizationEnabled": True,
-         "destinationContainerUrl": "https://demosdx.blob.core.windows.net/demo?sp=racwdli&st=2022-03-31T07:25:40Z&se=2022-04-07T15:25:40Z&spr=https&sv=2020-08-04&sr=c&sig=qqZZw%2Fyqs83XNSbUJKQ54AqR%2FSiG3ZZ6XlXT1qqILPM%3D",
+         "destinationContainerUrl": "https://<YOUR_BLOB_STORAGE_ACCOUNT>.blob.core.windows.net/demo?sp=racwdli&st=2022-03-31T07:25:40Z&se=2022-04-07T15:25:40Z&spr=https&sv=2020-08-04&sr=c&sig=qqZZw%2Fyqs83XNSbUJKQ54AqR%2FSiG3ZZ6XlXT1qqILPM%3D",
         # "timeToLive": "PT1H"
     }
 
